@@ -33,7 +33,7 @@ void Move(int dir, int duration)
     Motor2.write(CCW, 5);
     Motor3.write(CW, 5);
     Motor4.write(CCW, 5);
-    delay(duration);
+    delay(duration * 1000);
     Motor1.write(STOP, 0);
     Motor2.write(STOP, 0);
     Motor3.write(STOP, 0);
@@ -45,7 +45,7 @@ void Move(int dir, int duration)
     Motor2.write(CW, 5);
     Motor3.write(CCW, 5);
     Motor4.write(CW, 5);
-    delay(duration);
+    delay(duration * 1000);
     Motor1.write(STOP, 0);
     Motor2.write(STOP, 0);
     Motor3.write(STOP, 0);
@@ -57,7 +57,7 @@ void Move(int dir, int duration)
     Motor2.write(CCW, 5);
     Motor3.write(CCW, 5);
     Motor4.write(CCW, 5);
-    delay(duration);
+    delay(duration * 1000);
     Motor1.write(STOP, 0);
     Motor2.write(STOP, 0);
     Motor3.write(STOP, 0);
