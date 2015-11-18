@@ -12,7 +12,7 @@ void setup() {
   Camera.init();
   
   motorInit();
-  Move(DIR_RIGHT, 10);
+//  Move(DIR_RIGHT, 10);
 }
 
 void loop() {
@@ -21,7 +21,7 @@ void loop() {
   uint16_t blocks;
   char buf[32]; 
 
-  blocks = pixy.getBlocks();
+  blocks = Camera.getBlocks();
 
   if (blocks)
   {
@@ -34,8 +34,8 @@ void loop() {
       for (j=0; j<blocks; j++)
       {
         sprintf(buf, "  block %d: ", j);
-        Serial.print(buf); 
-        pixy.blocks[j].print();
+        Serial.print(buf);
+        Camera.blocks[j].print();
       }
     }
   }  
