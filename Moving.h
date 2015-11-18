@@ -33,6 +33,35 @@ void Move(int dir, int duration)
     Motor2.write(CCW, 5);
     Motor3.write(CW, 5);
     Motor4.write(CCW, 5);
+    delay(duration);
+    Motor1.write(STOP, 0);
+    Motor2.write(STOP, 0);
+    Motor3.write(STOP, 0);
+    Motor4.write(STOP, 0);
+  }
+  else if(dir == DIR_BACKWARD)
+  {
+    Motor1.write(CCW, 5);
+    Motor2.write(CW, 5);
+    Motor3.write(CCW, 5);
+    Motor4.write(CW, 5);
+    delay(duration);
+    Motor1.write(STOP, 0);
+    Motor2.write(STOP, 0);
+    Motor3.write(STOP, 0);
+    Motor4.write(STOP, 0);
+  }
+  else if(dir == DIR_LEFT)
+  {
+    Motor1.write(CCW, 5);
+    Motor2.write(CCW, 5);
+    Motor3.write(CCW, 5);
+    Motor4.write(CCW, 5);
+    delay(duration);
+    Motor1.write(STOP, 0);
+    Motor2.write(STOP, 0);
+    Motor3.write(STOP, 0);
+    Motor4.write(STOP, 0);
   }
 }
 
