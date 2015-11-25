@@ -25,9 +25,41 @@ void motorInit()
   Motor4.attachPins(22, 23);
 }
 
-void Move(int dir, int duration)
+void Move(int dir)
 {
   if(dir == DIR_FORWARD)
+  {
+    Motor1.write(CW, 5);
+    Motor2.write(CCW, 5);
+    Motor3.write(CW, 5);
+    Motor4.write(CCW, 5);
+  }
+  else if(dir == DIR_BACKWARD)
+  {
+    Motor1.write(CCW, 5);
+    Motor2.write(CW, 5);
+    Motor3.write(CCW, 5);
+    Motor4.write(CW, 5);
+  }
+  else if(dir == DIR_LEFT)
+  {
+    Motor1.write(CCW, 5);
+    Motor2.write(CW, 5);
+    Motor3.write(CW, 5);
+    Motor4.write(CCW, 5);
+  }
+  else
+  {
+    Motor1.write(CW, 5);
+    Motor2.write(CCW, 5);
+    Motor3.write(CCW, 5);
+    Motor4.write(CW, 5);
+  }
+}
+
+void Move(int dir, int duration)
+{
+    if(dir == DIR_FORWARD)
   {
     Motor1.write(CW, 5);
     Motor2.write(CCW, 5);
