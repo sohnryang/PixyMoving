@@ -29,5 +29,7 @@ void loop() {
       Move(DIR_LEFT);
     else if (blockPos > 250)
       Move(DIR_RIGHT);
+    else
+      Move(DIR_STOP);
   }
 }

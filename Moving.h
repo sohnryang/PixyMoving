@@ -11,6 +11,7 @@
 #define   DIR_BACKWARD  3
 #define   DIR_LEFTTURN  4
 #define   DIR_RIGHTRURN 5
+#define   DIR_STOP      6
 
 DCM Motor1;
 DCM Motor2;
@@ -48,18 +49,25 @@ void Move(int dir)
     Motor3.write(CW, 5);
     Motor4.write(CCW, 5);
   }
-  else
+  else if(dir == DIR_RIGHT)
   {
     Motor1.write(CW, 5);
     Motor2.write(CCW, 5);
     Motor3.write(CCW, 5);
     Motor4.write(CW, 5);
   }
+  else
+  {
+    Motor1.write(STOP, 0);
+    Motor2.write(STOP, 0);
+    Motor3.write(STOP, 0);
+    Motor4.write(STOP, 0);
+  }
 }
 
 void Move(int dir, int duration)
 {
-    if(dir == DIR_FORWARD)
+  if(dir == DIR_FORWARD)
   {
     Motor1.write(CW, 5);
     Motor2.write(CCW, 5);
@@ -95,13 +103,20 @@ void Move(int dir, int duration)
     Motor3.write(STOP, 0);
     Motor4.write(STOP, 0);
   }
-  else
+  else if(dir == DIR_RIGHT)
   {
     Motor1.write(CW, 5);
     Motor2.write(CCW, 5);
     Motor3.write(CCW, 5);
     Motor4.write(CW, 5);
     delay(duration * 1000);
+    Motor1.write(STOP, 0);
+    Motor2.write(STOP, 0);
+    Motor3.write(STOP, 0);
+    Motor4.write(STOP, 0);
+  }
+  else
+  {
     Motor1.write(STOP, 0);
     Motor2.write(STOP, 0);
     Motor3.write(STOP, 0);
