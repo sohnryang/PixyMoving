@@ -41,7 +41,6 @@ void loop() {
         }
         else
         {
-            Move(DIR_STOP);
             if (blockArea < 20000)
                 Move(DIR_FORWARD);
             else
