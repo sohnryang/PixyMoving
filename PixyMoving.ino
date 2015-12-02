@@ -41,14 +41,16 @@ void loop() {
         }
         else
         {
-            if (blockArea < 20000)
-                Move(DIR_FORWARD);
-            else
-                Move(DIR_STOP);
+           // Move(DIR_STOP);
+            //delay(10);
+             if (blockArea < 20000)
+                 {Move(DIR_FORWARD); delay(10);}
+             else
+                 {Move(DIR_STOP); delay(10);}
         }
     }
     else
     {
-        Move(DIR_STOP);
+        // Move(DIR_STOP);
     }
 }
