@@ -4,6 +4,7 @@
 #include <Pixy.h>
 
 Pixy Camera;
+boolean findMode;
 
 void setup() {
     Serial.begin(9600);
@@ -24,15 +25,20 @@ void loop() {
 
     if (blocks)
     {
+
         blockPos = Camera.blocks[0].x;
         blockWidth = Camera.blocks[0].width;
         blockHeight = Camera.blocks[0].height;
         blockArea = blockWidth * blockHeight;
 
         if (blockPos < 50)
+        {
             Move(DIR_LEFT);
+        }
         else if (blockPos > 250)
+        {
             Move(DIR_RIGHT);
+        }
         else
         {
             Move(DIR_STOP);
@@ -41,5 +47,9 @@ void loop() {
             else
                 Move(DIR_STOP);
         }
+    }
+    else
+    {
+        Move(DIR_STOP);
     }
 }
