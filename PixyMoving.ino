@@ -5,8 +5,6 @@
 
 Pixy Camera;
 
-void servoMove(int dir);
-
 void setup() {
   Serial.begin(9600);
 
